@@ -11,6 +11,9 @@ QuadGK = "1fd47b50-473d-5c70-9696-f719f8f3bcdc"
 
 [compat]
 Distributions = "0.24"
+QuadGK = "2.4"
+LsqFit = "0.12"
+HypergeometricFunctions = "0.3"
 julia = "1"
 
 [extras]
