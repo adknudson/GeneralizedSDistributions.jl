@@ -4,9 +4,11 @@ CurrentModule = GSDistributions
 
 # GSDistributions
 
-```@index
-```
-
 ```@autodocs
 Modules = [GSDistributions]
+```
+
+# Index
+
+```@index
 ```

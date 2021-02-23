@@ -12,7 +12,7 @@ import QuadGK: quadgk
 
 export
     GSDist,
-    mean, var, std, quantile
+    rand, sampler, quantile, mean, var, std
 
 
 include("GSDist.jl")

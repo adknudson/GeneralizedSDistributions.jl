@@ -1,3 +1,8 @@
+"""
+    GSDist <: ContinuousUnivariateDistribution
+
+Generalized S-Distribution for approximating univariate distributions.
+"""
 struct GSDist <: ContinuousUnivariateDistribution
     F₀::Real
     x₀::Real
