@@ -19,4 +19,6 @@ makedocs(;
 
 deploydocs(;
     repo="github.com/adknudson/GSDistributions.jl",
+    devbranch="main",
+    versions = ["stable" => "v^", "v#.#", "dev" => "main"]
 )
