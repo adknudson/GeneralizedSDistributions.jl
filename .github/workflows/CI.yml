@@ -58,8 +58,8 @@ jobs:
       - run: |
           julia --project=docs -e '
             using Documenter: doctest
-            using GSDistributions
-            doctest(GSDistributions)'
+            using GeneralizedSDistributions
+            doctest(GeneralizedSDistributions)'
       - run: julia --project=docs docs/make.jl
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

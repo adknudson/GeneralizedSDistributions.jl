@@ -122,7 +122,7 @@ git-tree-sha1 = "d48a40c0f54f29a5c8748cfb3225719accc72b77"
 uuid = "f6369f11-7733-5829-9624-2563aa707210"
 version = "0.10.16"
 
-[[GSDistributions]]
+[[GeneralizedSDistributions]]
 deps = ["Distributions", "HypergeometricFunctions", "LsqFit", "QuadGK"]
 path = ".."
 uuid = "759b0772-debe-4df1-a45f-0e53fcd0f49c"

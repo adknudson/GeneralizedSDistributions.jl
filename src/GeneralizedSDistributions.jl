@@ -1,4 +1,4 @@
-module GSDistributions
+module GeneralizedSDistributions
 
 import Distributions: UnivariateDistribution, ContinuousUnivariateDistribution, DiscreteUnivariateDistribution
 import Distributions: rand, sampler, logpdf, cdf, quantile, minimum, maximum, insupport

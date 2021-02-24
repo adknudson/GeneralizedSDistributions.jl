@@ -1,13 +1,13 @@
-using GSDistributions
+using GeneralizedSDistributions
 using Distributions
 using Test
 
-@testset "GSDistributions.jl" begin
+@testset "GeneralizedSDistributions.jl" begin
     # Test distributions
     A = LogNormal(3, 1)
     B = NegativeBinomial(20, 0.2)
     
-    # GSDistributions using the median as initial values
+    # GeneralizedSDistributions using the median as initial values
     F = GSDist(A)
     G = GSDist(B)
 

@@ -1,4 +1,4 @@
-name = "GSDistributions"
+name = "GeneralizedSDistributions"
 uuid = "759b0772-debe-4df1-a45f-0e53fcd0f49c"
 authors = ["Alex Knudson <aknudson@nevada.unr.edu>"]
 version = "0.1.0"

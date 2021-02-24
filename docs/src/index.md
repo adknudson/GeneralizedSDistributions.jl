@@ -1,11 +1,11 @@
 ```@meta
-CurrentModule = GSDistributions
+CurrentModule = GeneralizedSDistributions
 ```
 
-# GSDistributions
+# GeneralizedSDistributions
 
 ```@autodocs
-Modules = [GSDistributions]
+Modules = [GeneralizedSDistributions]
 ```
 
 # Index
