@@ -9,45 +9,46 @@ The solution is to approximate discrete distributions by a continous distributio
 ## Examples
 
 ```julia-repl
-julia> F = NegativeBinomial(20, 0.002)
+julia> using GeneralizedSDistributions, Distributions
+
+julia> D = NegativeBinomial(20, 0.002)
 NegativeBinomial{Float64}(r=20.0, p=0.002)
 
-julia> G = GSDist(F)
-GSDist(
-F₀: 0.5
-x₀: 9814
-α: 0.010708744772447428
-g: 1.0034154213417692
-k: 0.026052263652808192
-γ: 0.8423059246978783
-F: NegativeBinomial{Float64}(r=20.0, p=0.002)
-)
+julia> G = GSDist(D)
+Generalized S-Distribution (NegativeBinomial{Float64}(r=20.0, p=0.002))
+ α: 0.010708744772447428
+ g: 1.0034154213417692
+ k: 0.026052263652808192
+ γ: 0.8423059246978783
 
-julia> mean(F), mean(G)
+julia> mean(D), mean(G)
 (9980.0, 9973.383253892538)
 
-julia> var(F), var(G)
+julia> var(D), var(G)
 (4.99e6, 4.914780667295575e6)
 
-julia> quantile(F, 0.8), quantile(G, 0.8)
+julia> quantile(D, 0.8), quantile(G, 0.8)
 (11795, 11801.44831411299)
+
+julia> cdf(D, 10000), cdf(G, 10000)
+(0.5333848577165967, 0.5341049437932197)
 ```
 
 ## Functionality and Limitations
 
 Functionality implemented:
 
+* `rand` / `sampler`
+* `cdf` / `pdf`
 * `quantile`
-* `mean`
-* `rand`
+* `mean` / `median`
+* `modes` / `mode`
 * `var` / `std`
+* `minimum` / `maximum`
+* `insupport`
 
 Not yet implemented:
 
-* `cdf` / `pdf`
-* `minimum` / `maximum`
-* `insupport`
-* `modes` / `mode`
 * `skewness` / `kurtosis` / `entropy`
 
 *Almost* implemented:
