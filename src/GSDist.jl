@@ -23,7 +23,7 @@ struct GSDist <: ContinuousUnivariateDistribution
     end
 end
 GSDist(F₀, x₀, α, g, k, γ) = GSDist(F₀, x₀, α, g, k, γ, nothing, nothing)
-GSDist(F₀, x₀, α, g, k, γ, dist) = GSDist(F₀, x₀, α, g, k, γ, dist, nothing)
+GSDist(F₀, x₀, α, g, k, γ, dist) = GSDist(F₀, x₀, α, g, k, γ, dist, _piecewise_cdf(α, g, k, γ, dist))
 
 function GSDist(dist::UnivariateDistribution, F₀::Real=0.5;
     n::Int=21, diff::Function=three_point_midpoint, h::Real=1.0)
