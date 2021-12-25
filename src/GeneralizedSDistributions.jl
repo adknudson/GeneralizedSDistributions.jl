@@ -10,7 +10,7 @@ import Distributions: rand, sampler, logpdf, cdf, quantile, minimum, maximum, in
 import LsqFit: curve_fit, coef
 import HypergeometricFunctions: _₂F₁
 import QuadGK: quadgk
-import DifferentialEquations: ODEProblem, solve
+import OrdinaryDiffEq: ODEProblem, solve, AutoTsit5, Rosenbrock23
 
 
 export GSDist

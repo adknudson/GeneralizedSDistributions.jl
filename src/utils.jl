@@ -43,7 +43,7 @@ function _piecewise_cdf(α, g, k, γ, dist; probs=[0.01, 0.15, 0.85, 0.99])
     end
 
 	P = [ODEProblem(gsd!, [probs[i]], (cutpoint[i], cutpoint[i+1]), p) for i in 1:d]
-	S = [solve(x) for x in P]
+	S = [solve(x, AutoTsit5(Rosenbrock23())) for x in P]
 	
 	# Make a piecewise CDF
 	x -> begin
