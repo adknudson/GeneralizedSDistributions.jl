@@ -15,7 +15,8 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          - '1.5'
+          - '1.6'
+          - 'nightly'
         os:
           - ubuntu-latest
         arch:
@@ -49,7 +50,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: julia-actions/setup-julia@latest
         with:
-          version: '1.5'
+          version: '1'
       - run: |
           julia --project=docs -e '
             using Pkg
