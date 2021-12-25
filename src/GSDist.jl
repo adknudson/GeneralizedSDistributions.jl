@@ -2,6 +2,13 @@
     GSDist <: ContinuousUnivariateDistribution
 
 Generalized S-Distribution for approximating univariate distributions.
+
+# Arguments
+- `F₀`: the reference quantile.
+- `x₀`: the value at the reference quantile.
+- `α, g, k, γ`: parameters of the Generalized S-Distribution
+- `dist`: the underlying probability distribution.
+- `F`: the cdf of the distribution.
 """
 struct GSDist <: ContinuousUnivariateDistribution
     F₀::Real
@@ -25,21 +32,33 @@ end
 GSDist(F₀, x₀, α, g, k, γ) = GSDist(F₀, x₀, α, g, k, γ, nothing, nothing)
 GSDist(F₀, x₀, α, g, k, γ, dist) = GSDist(F₀, x₀, α, g, k, γ, dist, _piecewise_cdf(α, g, k, γ, dist))
 
+"""
+    GSDist(dist::UnivariateDistribution, F₀::Real=0.5;
+    n::Int=21, diff::Function=three_point_midpoint, h::Real=1.0)
+
+# Arguments
+- `dist::UnivariateDistribution`: a univariate distribution.
+- `F₀::Real`: the reference quantile to center the distribution around.
+- `n::Integer`: the number of points on the distribution to use for least squares fit.
+- `diff::Function`: one of the finite difference methods for gradient approximation.
+- `h::Real`: the denominator used in the diff function.
+"""
 function GSDist(dist::UnivariateDistribution, F₀::Real=0.5;
     n::Int=21, diff::Function=three_point_midpoint, h::Real=1.0)
     F₀ < 0 || F₀ > 1 && throw(DomainError(F₀, "F₀ must be between 0 and 1"))
     F₀ = Float64(F₀)
 
-    l,u = extrema(dist)
-    if isinf(l) l = quantile(dist, 1e-6) end
-    if isinf(u) u = quantile(dist, 1 - 1e-6) end
+    l, u = extrema(dist)
+    l = isinf(l) ? quantile(dist, 1e-6) : l
+    u = isinf(u) ? quantile(dist, 1 - 1e-6) : u
+
     ql, qu = cdf.(dist, (l,u))
 
     q = range(ql, qu, length=n)
     X = typeof(dist) <: DiscreteUnivariateDistribution ? Set(quantile.(dist, q)) : quantile.(dist, q)
 
     FX = cdf.(dist, X)
-    dF = y->diff(x->cdf(dist,x), y, h)
+    dF = y -> diff(x -> cdf(dist, x), y, h)
     fX = typeof(dist) <: DiscreteUnivariateDistribution ? dF.(X) : pdf.(dist, X)
 
     f = (t, p) -> p[1] * t.^p[2] .* (1.0 .- t.^p[3]).^p[4]
