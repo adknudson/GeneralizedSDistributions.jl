@@ -1,23 +1,20 @@
 module GeneralizedSDistributions
 
-import Distributions: UnivariateDistribution, 
-                      ContinuousUnivariateDistribution, 
-                      DiscreteUnivariateDistribution
-import Distributions: rand, sampler, logpdf, cdf, quantile, minimum, maximum, insupport,
-                      mean, var, std, modes, mode, skewness, kurtosis, entropy, mgf, cf,
-                      pdf, params
+using Distributions: UnivariateDistribution, ContinuousUnivariateDistribution, DiscreteUnivariateDistribution
+using LsqFit: curve_fit, coef
+using QuadGK: quadgk
+using SpecialFunctions: beta, beta_inc
+using OrdinaryDiffEq: ODEProblem, solve, AutoTsit5, Rosenbrock23
 
-import LsqFit: curve_fit, coef
-import HypergeometricFunctions: _₂F₁
-import QuadGK: quadgk
-import OrdinaryDiffEq: ODEProblem, solve, AutoTsit5, Rosenbrock23
+import Distributions: 
+rand, sampler, logpdf, cdf, quantile, minimum, maximum, insupport, mean, var, std, modes, mode, skewness, kurtosis, 
+entropy, mgf, cf, pdf, params
 
 
 export GSDist
 
 
 include("GSDist.jl")
-include("show.jl")
-include("utils.jl")
+
 
 end
