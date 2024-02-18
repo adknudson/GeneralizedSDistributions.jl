@@ -66,10 +66,3 @@ Additionally, there are plans to allow for the estimation of a GSDist using samp
 * Hernández–Bermejo, B., & Sorribas, A. (2001). Analytical Quantile Solution for the S‐distribution, Random Number Generation and Statistical Data Modeling. Biometrical Journal, 43(8), 1007-1025.
 * Muino, J. M., Voit, E. O., & Sorribas, A. (2006). GS-distributions: A new family of distributions for continuous unimodal variables. Computational statistics & data analysis, 50(10), 2769-2798.
 * Xiao, Q., & Zhou, S. (2019). Matching a correlation coefficient by a Gaussian copula. Communications in Statistics-Theory and Methods, 48(7), 1728-1747.
-
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://adknudson.github.io/GeneralizedSDistributions.jl/stable)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://adknudson.github.io/GeneralizedSDistributions.jl/dev)
-[![Build Status](https://github.com/adknudson/GeneralizedSDistributions.jl/workflows/CI/badge.svg)](https://github.com/adknudson/GeneralizedSDistributions.jl/actions)
-[![Coverage](https://codecov.io/gh/adknudson/GeneralizedSDistributions.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/adknudson/GeneralizedSDistributions.jl)
-
-
