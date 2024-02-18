@@ -1,7 +1,7 @@
 name = "GeneralizedSDistributions"
 uuid = "759b0772-debe-4df1-a45f-0e53fcd0f49c"
 authors = ["Alex Knudson <aknudson@nevada.unr.edu>"]
-version = "0.3.0"
+version = "0.3.1"
 
 [deps]
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
@@ -17,8 +17,8 @@ LsqFit = "0.12, 0.13, 0.14, 0.15"
 OrdinaryDiffEq = "6"
 QuadGK = "2.4"
 SpecialFunctions = "2"
-julia = "1.6, 1.7, 1.8, 1.9, 1.10"
 Test = "1"
+julia = "1.6, 1.7, 1.8, 1.9, 1.10"
 
 [extras]
 Aqua = "4c88cf16-eb10-579e-8560-4a9242c79595"
