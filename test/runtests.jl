@@ -1,6 +1,12 @@
 using GeneralizedSDistributions
 using Distributions
 using Test
+using Aqua
+
+
+Aqua.test_all(GeneralizedSDistributions; ambiguities=false)
+Aqua.test_ambiguities(GeneralizedSDistributions)
+
 
 @testset "Implementation" begin
 
